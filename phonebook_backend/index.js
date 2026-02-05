@@ -27,6 +27,7 @@ let persons = [
 ]
 
 app.use(express.static('dist'))
+
 app.use(express.json())
 
 morgan.token('body', (req) => {
@@ -45,9 +46,9 @@ const morganMiddleware = morgan(
 
 app.use(morganMiddleware)
 
-app.get('/', (req, res)=> {
-    res.send("Hello world!")
-})
+// app.get('/', (req, res)=> {
+//     res.send("Hello world!")
+// })
 
 app.get('/api/persons', (req, res) => {
     res.json(persons)
